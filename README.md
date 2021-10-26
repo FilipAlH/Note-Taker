@@ -3,4 +3,6 @@ This application aims to serve as a note taker that will read and write from a j
 
 link to deployed application in herkou!: https://note-taker-abc.herokuapp.com
 
+![asdfasdfs](https://user-images.githubusercontent.com/89649055/138900953-ea2ad6d8-058d-4caa-9ff6-22f0f48ddd47.png)
+
 ![adsfasfasdfasfasdfasd](https://user-images.githubusercontent.com/89649055/138900403-f888f701-a7e8-46aa-a596-e3bcb20b0e9e.png)
