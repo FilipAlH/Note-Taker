@@ -5,8 +5,8 @@ let newNoteBtn;
 let noteList;
 
 if (window.location.pathname === '/notes') {
-  noteTitle = document.querySelector('.note-title');
-  noteText = document.querySelector('.note-textarea');
+  noteTitle = document.getElementById('note-title');
+  noteText = document.getElementById('note-textarea');
   saveNoteBtn = document.querySelector('.save-note');
   newNoteBtn = document.querySelector('.new-note');
   noteList = document.querySelectorAll('.list-container .list-group');
@@ -15,11 +15,13 @@ if (window.location.pathname === '/notes') {
 // Show an element
 const show = (elem) => {
   elem.style.display = 'inline';
+  return
 };
 
 // Hide an element
 const hide = (elem) => {
   elem.style.display = 'none';
+  return
 };
 
 // activeNote is used to keep track of the note in the textarea
@@ -71,6 +73,7 @@ const handleNoteSave = () => {
     title: noteTitle.value,
     text: noteText.value,
   };
+
   saveNote(newNote).then(() => {
     getAndRenderNotes();
     renderActiveNote();
@@ -89,7 +92,7 @@ const handleNoteDelete = (e) => {
     activeNote = {};
   }
 
-  deleteNote(noteId).then(() => {
+  deleteNote(parseInt(noteId)).then(() => {
     getAndRenderNotes();
     renderActiveNote();
   });
@@ -124,7 +127,6 @@ const renderNoteList = async (notes) => {
   }
 
   let noteListItems = [];
-
   // Returns HTML element with or without a delete button
   const createLi = (text, delBtn = true) => {
     const liEl = document.createElement('li');
